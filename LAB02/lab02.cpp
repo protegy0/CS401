@@ -88,16 +88,13 @@ class LinkedListStack {
 };
 
 string balancedStringWithArray(string s) {
-    bool balanced = true;
     ArrayStack stk(s.size());
-     
     for (char c : s) {
         if (c == '(' || c == '[' || c == '{') {
             stk.push(c);
         }
         if (c == ')' || c == ']' || c == '}') {
             if (stk.isEmpty()) {
-                balanced = false;
                 break;
             }
             char check = stk.pop();
@@ -110,7 +107,6 @@ string balancedStringWithArray(string s) {
     }
 }
 string balancedStringWithLL(string s) {
-    bool balanced = true;
     LinkedListStack stk;
      
     for (char c : s) {
@@ -119,7 +115,6 @@ string balancedStringWithLL(string s) {
         }
         if (c == ')' || c == ']' || c == '}') {
             if (stk.isEmpty()) {
-                balanced = false;
                 break;
             }
             char check = stk.pop();
