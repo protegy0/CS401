@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-CampingBag::CampingBag(string size, int thickness, double price) : OutdoorItem(price){
+CampingBag::CampingBag(string size, double thickness, double price) : OutdoorItem(price){
     this->size = size;
     this->thickness = thickness;
     this->price = price;

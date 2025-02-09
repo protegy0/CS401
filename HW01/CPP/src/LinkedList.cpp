@@ -10,7 +10,7 @@ Node* LinkedList::getHead() {
     return this->head;
 }
 
-void LinkedList::insertAtBeginning(Item item, string type) {
+void LinkedList::insertAtBeginning(Item* item, string type) {
     Node* newNode = new Node();
     newNode->item = item;
     newNode->type = type;
@@ -18,7 +18,7 @@ void LinkedList::insertAtBeginning(Item item, string type) {
     this->head = newNode;
 }
 
-void LinkedList::insertAtEnd(Item item, string type) {
+void LinkedList::insertAtEnd(Item* item, string type) {
     Node* newNode = new Node();
     newNode->item = item;
     newNode->type = type;

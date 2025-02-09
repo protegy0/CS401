@@ -8,30 +8,66 @@ Inventory::Inventory() {
 };
 
 
-void Inventory::addIndoorItem(Item item, string type) {
-    this->IndoorInventory.insertAtBeginning(item, type);
+void Inventory::addIndoorItem(Item* item, string category) {
+    this->IndoorInventory.insertAtBeginning(item, category);
 }
 
-void Inventory::addOutdoorItem(Item item, string type) {
-    this->OutdoorInventory.insertAtBeginning(item, type);
+void Inventory::addOutdoorItem(Item* item, string category) {
+    this->OutdoorInventory.insertAtBeginning(item, category);
 }
 
 void Inventory::displayIndoorItems() {
     Node* node = IndoorInventory.getHead();
-
     while (node != nullptr) {
-        if (node->type == "indoor") {
-            node->item.display();
-        }
+        node->item->display();
+        node = node->next;
     }
 }
 
 void Inventory::displayOutdoorItems() {
     Node* node = OutdoorInventory.getHead();
-
     while (node != nullptr) {
-        if (node->type == "outdoor") {
-            node->item.display();
+        node->item->display();
+        node = node->next;
+    }
+}
+
+void Inventory::displayVolleyballItems() {
+    Node* node = IndoorInventory.getHead();
+    while (node != nullptr) {
+        if (node->type == "vb") {
+            node->item->display();
         }
+        node = node->next;
+    }
+}
+
+void Inventory::displayTabletennisItems() {
+    Node* node = IndoorInventory.getHead();
+    while (node != nullptr) {
+        if (node->type == "tt") {
+            node->item->display();
+        }
+        node = node->next;
+    }
+}
+
+void Inventory::displayCampingItems() {
+    Node* node = OutdoorInventory.getHead();
+    while (node != nullptr) {
+        if (node->type == "c") {
+            node->item->display();
+        }
+        node = node->next;
+    }
+}
+
+void Inventory::displaySoccerItems() {
+    Node* node = OutdoorInventory.getHead();
+    while (node != nullptr) {
+        if (node->type == "s") {
+            node->item->display();
+        }
+        node = node->next;
     }
 }

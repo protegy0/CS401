@@ -9,3 +9,5 @@ void Item::display() {
     cout << "This is an item." << endl;
 }
 
+Item::~Item() {};
+

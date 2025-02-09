@@ -8,9 +8,9 @@ using namespace std;
 class CampingBag : public OutdoorItem {
     private:
         string size;
-        int thickness;
+        double thickness;
     public:
-        CampingBag(string size, int thickness, double price);
+        CampingBag(string size, double thickness, double price);
         void display() override;
 };
 

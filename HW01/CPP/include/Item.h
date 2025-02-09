@@ -6,6 +6,7 @@ class Item {
     public:
         Item();
         virtual void display();
+        virtual ~Item();
 };
 
 #endif
