@@ -3,10 +3,13 @@
 
 
 class Item {
+    protected:
+        double price;
     public:
-        Item();
+        Item(double price);
         virtual void display();
         virtual ~Item();
+        double getPrice();
 };
 
 #endif

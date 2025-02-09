@@ -10,5 +10,5 @@ VolleyballNet::VolleyballNet(string type, string size, double price) : IndoorIte
 }
 
 void VolleyballNet::display() {
-    cout << "$" << this->price << " - This volleyball net is made for " << this->type << "s and is " << this->size << endl;
+    cout << "$" << this->price << " - This volleyball net is made for " << this->type << "s and is " << this->size;
 }

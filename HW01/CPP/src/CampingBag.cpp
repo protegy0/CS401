@@ -10,5 +10,5 @@ CampingBag::CampingBag(string size, double thickness, double price) : OutdoorIte
 }
 
 void CampingBag::display() {
-    cout << "$" << this->price << " - This camping bag is size " << this->size << " and has a thickness of " << this->thickness << " inches" << endl;
+    cout << "$" << this->price << " - This camping bag is size " << this->size << " and has a thickness of " << this->thickness << " inches";
 }

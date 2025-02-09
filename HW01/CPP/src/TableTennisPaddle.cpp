@@ -9,5 +9,5 @@ TableTennisPaddle::TableTennisPaddle(string style, double price) : IndoorItem(pr
 }
 
 void TableTennisPaddle::display() {
-    cout << "$" << this->price << " - This table tennis paddle is for " << this->style << endl;
+    cout << "$" << this->price << " - This table tennis paddle is for " << this->style;
 }

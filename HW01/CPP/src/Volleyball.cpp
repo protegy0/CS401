@@ -10,5 +10,5 @@ Volleyball::Volleyball(string material, string size, double price) : IndoorItem(
 }
 
 void Volleyball::display() {
-    cout << "$" << this->price << " - This volleyball is made of " << this->material << " and is " << this->size << endl;
+    cout << "$" << this->price << " - This volleyball is made of " << this->material << " and is " << this->size;
 }

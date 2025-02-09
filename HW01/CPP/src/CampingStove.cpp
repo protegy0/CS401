@@ -10,5 +10,5 @@ CampingStove::CampingStove(string size, int wattage, double price) : OutdoorItem
 }
 
 void CampingStove::display() {
-    cout << "$" << this->price << " - This camping stove is size " << this->size << " and has a wattage of " << this->wattage << endl;
+    cout << "$" << this->price << " - This camping stove is size " << this->size << " and has a wattage of " << this->wattage;
 }

@@ -8,5 +8,5 @@ TableTennisBall::TableTennisBall(double price) : IndoorItem(price){
 }
 
 void TableTennisBall::display() {
-    cout << "$" << this->price << " - A standard table tennis ball" << endl;
+    cout << "$" << this->price << " - A standard table tennis ball";
 }

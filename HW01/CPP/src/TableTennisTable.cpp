@@ -9,5 +9,5 @@ TableTennisTable::TableTennisTable(string material, double price) : IndoorItem(p
 }
 
 void TableTennisTable::display() {
-    cout << "$" << this->price << " - This table tennis table is made of " << this->material << endl;
+    cout << "$" << this->price << " - This table tennis table is made of " << this->material;
 }

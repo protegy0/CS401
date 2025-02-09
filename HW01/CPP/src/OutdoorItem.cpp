@@ -3,7 +3,7 @@
 
 using namespace std;
 
-OutdoorItem::OutdoorItem(double price) : Item() {
+OutdoorItem::OutdoorItem(double price) : Item(price) {
     this->price = price;
 };
 

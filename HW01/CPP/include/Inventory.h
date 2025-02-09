@@ -10,14 +10,15 @@ class Inventory {
         LinkedList IndoorInventory;
     public:
         Inventory();
-        void addOutdoorItem(Item* item, string category);
-        void addIndoorItem(Item* item, string category);
+        void addOutdoorItem(Item* item, string category, int stock);
+        void addIndoorItem(Item* item, string category, int stock);
         void displayOutdoorItems();
         void displayIndoorItems();
         void displayVolleyballItems();
         void displayTabletennisItems();
         void displayCampingItems();
         void displaySoccerItems();
+        void buyItem(int ID, string page);
 };
 
 #endif

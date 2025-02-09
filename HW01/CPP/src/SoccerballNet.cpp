@@ -9,5 +9,5 @@ SoccerballNet::SoccerballNet(int size, double price) : OutdoorItem(price){
 }
 
 void SoccerballNet::display() {
-    cout << "$" << this->price << " - This soccerball net is " << this->size << " feet wide" << endl;
+    cout << "$" << this->price << " - This soccerball net is " << this->size << " feet wide";
 }

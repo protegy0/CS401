@@ -9,5 +9,5 @@ Soccerball::Soccerball(string material, double price) : OutdoorItem(price){
 }
 
 void Soccerball::display() {
-    cout << "$" << this->price << " - This soccerball is made of " << this->material << endl;
+    cout << "$" << this->price << " - This soccerball is made of " << this->material;
 }

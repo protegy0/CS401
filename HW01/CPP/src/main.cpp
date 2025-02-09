@@ -35,31 +35,31 @@ int main() {
     Item* sbNetLarge = new SoccerballNet(24, 51.99);
 
     // Adding indoor items to inventory object
-    inventory.addIndoorItem(vbCheap, "vb");
-    inventory.addIndoorItem(vbExpensive, "vb");
-    inventory.addIndoorItem(vbNetSmall, "vb");
-    inventory.addIndoorItem(vbNetLarge, "vb");
-    inventory.addIndoorItem(ttBall, "tt");
-    inventory.addIndoorItem(ttPaddleBeginner, "tt");
-    inventory.addIndoorItem(ttPaddleIntermediate, "tt");
-    inventory.addIndoorItem(ttPaddleExpert, "tt");
-    inventory.addIndoorItem(ttTableStd, "tt");
-    inventory.addIndoorItem(ttTablePrem, "tt");
+    inventory.addIndoorItem(vbCheap, "vb", 100);
+    inventory.addIndoorItem(vbExpensive, "vb", 25);
+    inventory.addIndoorItem(vbNetSmall, "vb", 10);
+    inventory.addIndoorItem(vbNetLarge, "vb", 5);
+    inventory.addIndoorItem(ttBall, "tt", 1000);
+    inventory.addIndoorItem(ttPaddleBeginner, "tt", 150);
+    inventory.addIndoorItem(ttPaddleIntermediate, "tt", 100);
+    inventory.addIndoorItem(ttPaddleExpert, "tt", 50);
+    inventory.addIndoorItem(ttTableStd, "tt", 30);
+    inventory.addIndoorItem(ttTablePrem, "tt", 15);
 
     // Adding outdoor items to inventory object
-    inventory.addOutdoorItem(cTentCheap, "c");
-    inventory.addOutdoorItem(cTentIntermediate, "c");
-    inventory.addOutdoorItem(cTentExpensive, "c");
-    inventory.addOutdoorItem(cStoveCheap, "c");
-    inventory.addOutdoorItem(cStoveExpensive, "c");
-    inventory.addOutdoorItem(cBagCheap, "c");
-    inventory.addOutdoorItem(cBagIntermediate, "c");
-    inventory.addOutdoorItem(cBagExpensive, "c");
-    inventory.addOutdoorItem(sbCheap, "s");
-    inventory.addOutdoorItem(sbExpensive, "s");
-    inventory.addOutdoorItem(sbNetSmall, "s");
-    inventory.addOutdoorItem(sbNetMedium, "s");
-    inventory.addOutdoorItem(sbNetLarge, "s");
+    inventory.addOutdoorItem(cTentCheap, "c", 25);
+    inventory.addOutdoorItem(cTentIntermediate, "c", 20);
+    inventory.addOutdoorItem(cTentExpensive, "c", 20);
+    inventory.addOutdoorItem(cStoveCheap, "c", 45);
+    inventory.addOutdoorItem(cStoveExpensive, "c", 20);
+    inventory.addOutdoorItem(cBagCheap, "c", 45);
+    inventory.addOutdoorItem(cBagIntermediate, "c", 40);
+    inventory.addOutdoorItem(cBagExpensive, "c", 30);
+    inventory.addOutdoorItem(sbCheap, "s", 100);
+    inventory.addOutdoorItem(sbExpensive, "s", 50);
+    inventory.addOutdoorItem(sbNetSmall, "s", 30);
+    inventory.addOutdoorItem(sbNetMedium, "s", 20);
+    inventory.addOutdoorItem(sbNetLarge, "s", 10);
     
 
 
@@ -68,44 +68,70 @@ int main() {
 
 
     bool run = true;
-    int choice;
+    int choiceForDisplay;
+    string choiceForBuy;
     string cont;
-
+    string page;
+    cout << "Welcome to our catalogue! Please choose a section to browse!";
+    cout << endl << "--------------------------------------------" << endl;
     while (run) {
-        cout << "Display all indoor items: 1" << endl;
-        cout << "Display all outdoor items: 2" << endl;
-        cout << "Display only volleyball items: 3" << endl;
-        cout << "Display only table tennis items: 4" << endl;
-        cout << "Display only camping items: 5" << endl;
-        cout << "Display only soccer items: 6" << endl;  
-        cin >> choice;
-        switch (choice) {
+        run = false;
+        cout << "All Indoor items: 1" << endl;
+        cout << "All Outdoor items: 2" << endl;
+        cout << "Volleyball items: 3" << endl;
+        cout << "Table tennis items: 4" << endl;
+        cout << "Camping items: 5" << endl;
+        cout << "Soccer items: 6" << endl;
+        start:  
+        cin >> choiceForDisplay;
+        switch (choiceForDisplay) {
             case 1:
+                cout << endl << "INDOOR ITEMS" << endl << "--------------------------------------------" << endl;
                 inventory.displayIndoorItems();
+                page = "i";
                 break;
             case 2:
+            cout << endl << "OUTDOOR ITEMS" << endl << "--------------------------------------------" << endl;
                 inventory.displayOutdoorItems();
+                page = "o";
                 break;
             case 3: 
+                cout << endl << "VOLLEYBALL ITEMS" << endl << "--------------------------------------------" << endl;
                 inventory.displayVolleyballItems();
+                page = "i";
                 break;
             case 4:
+                cout << endl << "TABLE TENNIS ITEMS" << endl << "--------------------------------------------" << endl;
                 inventory.displayTabletennisItems();
+                page = "i";
                 break;
             case 5:
+                cout << endl << "CAMPING ITEMS" << endl << "--------------------------------------------" << endl;
                 inventory.displayCampingItems();
+                page = "o";
                 break;
-            case 6: 
+            case 6:
+                cout << endl << "SOCCER ITEMS" << endl << "--------------------------------------------" << endl; 
                 inventory.displaySoccerItems();
+                page = "o";
                 break;
             default:
-                cout << "Not an option. please choose again.";
-                continue;
+                cout << endl << "Not an option. please choose again!" << endl;
+                goto start;
         }
+        cout << "--------------------------------------------" << endl;
+        cout << "Would you like to buy something from this page? (Y/N): ";
+        cin >> choiceForBuy;
+        if (choiceForBuy == "Y" || choiceForBuy == "yes" || choiceForBuy == "y" || choiceForBuy == "YES") {
+            int ID;
+            cout << "Please enter the ID of the item you would like to purchase: ";
+            cin >> ID;
+            inventory.buyItem(ID, page);
+        } 
         cout << "Continue? (Y/N): ";
         cin >> cont;
-        if (cont == "N" || cont == "no" || cont == "n" || cont == "NO") {
-            run = false;
+        if (cont == "Y" || cont == "yes" || cont == "y" || cont == "YES") {
+            run = true;
         }
     }
 
