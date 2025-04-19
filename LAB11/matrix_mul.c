@@ -14,7 +14,7 @@
 #include <time.h>
 #include <mpi.h>
 #include <time.h>
-#define N 4000 // Matrix size (N x N)
+#define N 1000 // Matrix size (N x N)
 // Function to initialize a matrix with random values
 void initialize_matrix(double *matrix, int rows, int cols) {
     for (int i = 0; i < rows; i++) {
